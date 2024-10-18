@@ -16,7 +16,7 @@ export default function LoginPage() {
         <input id="password" name="password" type="password" required placeholder='Şifre Giriniz...'/></label>
         <button formAction={login}>Giriş Yap <Login /></button>
       </form>
-      <Link href={"/signup"}>Kayıt Ol <RightArrow /></Link>
+     <Link href={"/signup"}> <button>Kayıt Ol <RightArrow /></button></Link>
     </div>
   )
 }
