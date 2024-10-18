@@ -21,9 +21,9 @@ export default function NewPost() {
   return (
     <div className="newpostCont">
       <form ref={formRef} action={action}>
-        <input id="title" name="title" type="text" placeholder="Başlık Yazınız..."/>
+        <input id="title" name="title" type="text" placeholder="Başlık Yazınız..." />
         {state?.errors?.title && <small style={{ color: "red" }}>{state.errors.title}</small>}
-        <input id="content" name="content" type="text" placeholder="Hikayenizi Anlatın..."/>
+        <input id="content" name="content" type="text" placeholder="Hikayenizi Anlatın..." />
         {state?.errors?.content && <small style={{ color: "red" }}>{state.errors.content}</small>}
         <button type="submit">Yayınla</button>
       </form>

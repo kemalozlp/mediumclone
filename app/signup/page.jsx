@@ -22,7 +22,7 @@ export default function SignUp() {
           </label>
           <button ><Login /> Kayıt Ol </button>
         </form>
-        <button > <LeftArrow /> Giriş Yap</button>
+       <Link href={"/login"}> <button > <LeftArrow /> Giriş Yap</button></Link>
       </div>
   );
 }
