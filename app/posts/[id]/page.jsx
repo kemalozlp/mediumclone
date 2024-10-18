@@ -1,8 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
-import LikeBtnPost from "@/app/likebtn/like";
-import Favorites from "@/app/favoritesform/favori";
 import "./postdetail.css"
-import CommentSide from "@/app/(comments)/commentside/commentside";
 export default async function PostDetail({ params }) {
   const id = Number(params.id);
   const supabase = createClient();
@@ -35,11 +32,6 @@ export default async function PostDetail({ params }) {
             <h4> <span>{user?.email[0]}</span> {user?.email}</h4>
             <h1>{x.title}</h1>
             <p>{x.content}</p>
-            <div className="postBtns">
-              <LikeBtnPost id={x.id} />
-              <CommentSide id={id} commentslength={comments.length} commentsid={commentsid} user={user} />
-              <Favorites id={x.id} />
-            </div>
           </div>
         )) : ""
       }
