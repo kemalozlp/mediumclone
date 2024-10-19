@@ -1,11 +1,13 @@
-import Link from "next/link";
 import { LeftArrow, Login } from "../svgfiles/svg"; 
 import { signUp } from "./actions";
 import "./signup.css";
 
-export default function SignUp() {
+export default function SignUp({setSign, sign }) {
   return (
-    <div className="signup" > 
+    <div className="signup"  style={{
+      opacity: `${sign === "login" ? "0" : "1"}`,
+      transition:"all .1s",
+    }}> 
         <h1>Kayıt Ol</h1>
         <form action={signUp}>
           <label htmlFor="firstName">
@@ -20,9 +22,9 @@ export default function SignUp() {
           <label htmlFor="password">
             <input type="password" name="password" placeholder="********" required />
           </label>
-          <button ><Login /> Kayıt Ol </button>
+          <button><Login /> Kayıt Ol </button>
         </form>
-       <Link href={"/login"}> <button > <LeftArrow /> Giriş Yap</button></Link>
+        <button onClick={() => setSign("login")}> <LeftArrow /> Giriş Yap</button>
       </div>
   );
 }
